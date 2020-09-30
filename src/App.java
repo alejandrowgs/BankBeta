@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class App {
 	
-	JFrame frame, frame2;
+	JFrame frame, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9,  frame10;
 	JTextArea loginTextA;
 	Font bankNameF = new Font("Helvetica", Font.PLAIN, 45);
 	Font bigButtonF = new Font("Helvetica", Font.PLAIN, 25);
@@ -80,7 +80,6 @@ public class App {
 	
 	public void loginScreen() {       //Pantalla de login, añadir que si el logueo está mal haga algo, automaticamente pasa a la siguiente por ahora
 	
-		
 		frame2 = new JFrame("User Access");
 		frame2.setSize(800, 600);
 		frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -132,6 +131,16 @@ public class App {
 	
 	public void AccountsScreen() {
 		
+		frame2.dispose();
+		
+		frame3 = new JFrame("User Access");
+		frame3.setSize(800, 600);
+		frame3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame3.getContentPane().setBackground(new Color(5, 163, 171));
+		frame3.setLayout(null);
+		frame3.setResizable(false);
+		frame3.setLocationRelativeTo(null);
+		frame3.setOpacity(1);
 		
 		
 		loginTextA.setText("¡Bienvenido de vuelta!");
@@ -139,7 +148,7 @@ public class App {
 		JPanel AccountsBP = new JPanel();
 		AccountsBP.setBounds(250, 250, 300, 200);
 		AccountsBP.setLayout(new GridLayout(4,1,0,1));
-		frame2.add(AccountsBP);
+		frame3.add(AccountsBP);
 		
 		JButton ingdineroB = new JButton("Ingresar Dinero");
 		ingdineroB.setForeground(Color.black);
@@ -168,12 +177,13 @@ public class App {
 		revmensualB.setFocusPainted(false);
 		revmensualB.addActionListener(revisionHandler);
 		AccountsBP.add(revmensualB);
+		
+		frame3.setVisible(true);
+
 	}
 	
 	public void IngresarDinero() {
 		
-		frame2.repaint();
-		frame2.revalidate();
 		
 		loginTextA.setText("¿A cual cuenta desea ingresar saldo?");
 
